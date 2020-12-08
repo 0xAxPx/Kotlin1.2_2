@@ -4,19 +4,19 @@ import java.util.*
 fun main() {
 
     val scanner = Scanner(System.`in`)
-    println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С‡РµР»РѕРІРµРє РєРѕРјСѓ РїРѕРЅСЂР°РІРёР»РѕСЃСЊ:")
+    println("Введите количество человек, которым понравилось:")
     val likes = scanner.nextInt()
     val result = StringBuilder()
         .append(likes)
         .append(" ")
         .append(likesPostFix(likes))
-    println("РџРѕРЅСЂР°РІРёР»РѕСЃСЊ $result")
+    println("Понравилось $result")
 }
 
 fun likesPostFix(likes : Int): String {
-    return if (likes % 2 == 0) {
-        return "Р»СЋРґСЏРј"
+    return if (likes % 2 == 0 || likes.toString().endsWith("1")) {
+        return "людям"
     } else {
-        return "С‡РµР»РѕРІРµРєСѓ"
+        return "человеку"
     }
 }
